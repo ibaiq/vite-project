@@ -1,0 +1,77 @@
+@import "./sidebar";
+@import "./variables";
+
+.el-menu--horizontal {
+  .el-menu-item:not(.is-disable):hover {
+    background: none !important;
+    color: var(--el-menu-active-color);
+  }
+}
+
+/* submenu item */
+.el-menu--horizontal > .el-sub-menu .el-sub-menu__title {
+  height: 50px !important;
+  font-size: 12px;
+  line-height: 50px !important;
+  border: 0;
+}
+
+.el-menu--horizontal > .el-sub-menu.is-active .el-sub-menu__title {
+  border: 0;
+}
+
+#app {
+  .main-container {
+    .app-main {
+      .card {
+        padding: 15px 15px 0;
+        background: white;
+        border-radius: 5px;
+        box-shadow: 0 3px 15px -5px rgba(0, 0, 0, 0.15);
+
+        .el-form .el-form-item {
+          .el-form-item__label {
+            font-weight: bold;
+          }
+        }
+
+        > .el-row {
+          padding: 0 0 15px;
+        }
+
+        .el-table {
+          .cell {
+            line-height: normal !important;
+            height: calc(100% - 3px);
+          }
+
+          .svg-icon {
+            margin: 0 !important;
+          }
+          .iconfont {
+            margin: 0 !important;
+          }
+
+          .el-dropdown {
+            margin-left: 10px;
+          }
+        }
+      }
+
+      .page {
+        padding: 15px 0 0;
+      }
+    }
+  }
+}
+
+.popups {
+  border-radius: 10px;
+  > .el-dialog__body {
+    > .el-form .el-form-item {
+      .el-form-item__label {
+        font-weight: bold;
+      }
+    }
+  }
+}

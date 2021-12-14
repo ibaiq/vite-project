@@ -1,0 +1,130 @@
+@import "variables";
+
+#app {
+  .main-container {
+    min-height: 100%;
+    -webkit-transition: margin-left 0.25s;
+    transition: margin-left 0.25s;
+    margin-left: $sideBarWidth;
+    position: relative;
+  }
+
+  .sidebar {
+    -webkit-transition: width 0.25s;
+    transition: width 0.25s;
+    width: $sideBarWidth !important;
+    background: white;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1001;
+    overflow: hidden;
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+
+    .el-sub-menu .el-sub-menu__title {
+      font-size: 13px;
+    }
+
+    .el-menu-item {
+      font-size: 13px;
+    }
+  }
+
+  .horizontal-collapse-transition {
+    transition: 0s width ease-in-out, 0s padding-left ease-in-out,
+      0s padding-right ease-in-out;
+  }
+
+  .scrollbar-wrapper {
+    overflow-x: hidden !important;
+  }
+
+  .el-scrollbar__bar.is-vertical {
+    right: 0;
+  }
+
+  .el-scrollbar {
+    height: calc(100% - 50px);
+  }
+
+  //  & .logo {
+  //    .el-scrollbar {
+  //      height: calc(100% - 50px);
+  //    }
+  //  }
+
+  .el-menu {
+    border: none;
+    height: 100%;
+    width: 100% !important;
+  }
+
+  //.el-menu-item,
+  //.el-submenu__title {
+  //  overflow: hidden !important;
+  //  text-overflow: ellipsis !important;
+  //  white-space: nowrap !important;
+  //}
+
+  .hideSidebar {
+    .sidebar {
+      width: 65px !important;
+    }
+
+    .main-container {
+      margin-left: 65px;
+    }
+
+    .el-submenu {
+      overflow: hidden;
+    }
+
+    .el-menu--collapse {
+      .el-menu-item {
+        span {
+          display: none;
+        }
+      }
+    }
+
+    .el-menu--collapse {
+      .el-submenu {
+        & > .el-submenu__title {
+          & > span {
+            height: 0;
+            width: 0;
+            overflow: hidden;
+            visibility: hidden;
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+
+  .el-menu--collapse .el-menu .el-submenu {
+    min-width: $sideBarWidth !important;
+  }
+
+  .mobile {
+    .main-container {
+      margin-left: 0;
+    }
+
+    .sidebar {
+      transition: transform 0.25s;
+      width: $sideBarWidth;
+    }
+
+    &.hideSidebar {
+      .sidebar {
+        pointer-events: none;
+        transition-duration: 0.3s;
+        transform: translate3d(-$sideBarWidth, 0, 0);
+      }
+    }
+  }
+}
