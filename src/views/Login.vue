@@ -2,8 +2,11 @@
   <section>
     <div class="login-box">
       <div class="main">
-        <div class="current-header">
-          <el-icon />
+        <div class="current-header" @click="router.push('/')">
+          <el-icon>
+            <ArrowLeft />
+          </el-icon>
+          <span>首页</span>
         </div>
         <h3>用户登录</h3>
         <el-form :model="data.user" :rules="rules" ref="form">
@@ -44,7 +47,7 @@ import { getCurrentInstance, reactive, ref, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { useStore } from "vuex";
 import { login } from "@/api/user.js";
-import { Lock, User } from "@element-plus/icons-vue";
+import { Lock, User, ArrowLeft } from "@element-plus/icons-vue";
 import { setToken } from "@/utils/auth-cookie.js";
 
 const { proxy } = getCurrentInstance();
@@ -225,10 +228,22 @@ section:before {
       color: white;
       line-height: 61px;
       cursor: pointer;
-      display: table-cell;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      width: fit-content;
 
       .el-icon {
+        width: auto;
+        height: auto;
+        line-height: normal;
+        display: flex;
         margin-right: 5px;
+
+        svg {
+          width: 1.1em;
+          height: 1.1em;
+        }
       }
     }
 

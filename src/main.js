@@ -9,12 +9,12 @@ import zhCn from "element-plus/es/locale/lang/zh-cn";
 import store from "@/store/index.js";
 import router from "@/router/index.js";
 import * as ElIconModules from "@element-plus/icons-vue";
-import { transElIconName } from "@/utils/utils.js";
 
 const app = createApp(App);
 
 for (let iconName in ElIconModules) {
-  app.component(transElIconName(iconName), ElIconModules[iconName]);
+  // app.component(transElIconName(iconName), ElIconModules[iconName]);
+  app.component(iconName, ElIconModules[iconName]);
 }
 
 app
