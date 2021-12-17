@@ -3,7 +3,6 @@ import ParentView from "@/components/parentView/Index.vue";
 import InnerLink from "@/components/innerLink/Index.vue";
 import { getRoutes } from "@/api/menu.js";
 import manage from "@/router/manage.js";
-import path from "path";
 import router from "@/router/index.js";
 
 // const path = require("path");
