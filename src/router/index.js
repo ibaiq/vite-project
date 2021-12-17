@@ -42,7 +42,7 @@ router.beforeEach((to, from, next) => {
 
   if (authList.indexOf("/".concat(to.fullPath.split("/")[1])) !== -1) {
     if (store.getters.token) {
-      if (store.getters.user === undefined) {
+      if (!store.getters.user.username) {
         store.dispatch("user/Profile").catch(() => {
           next(to.fullPath);
         });

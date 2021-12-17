@@ -1,5 +1,9 @@
-<template>首页</template>
+<template>
+  <Header />
+</template>
 
-<script setup></script>
+<script setup>
+import Header from "@/components/header/Index.vue";
+</script>
 
 <style scoped></style>

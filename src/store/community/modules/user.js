@@ -4,7 +4,7 @@ import { ElMessage } from "element-plus";
 
 const state = {
   token: getToken(),
-  user: undefined,
+  user: {},
 };
 
 const mutations = {
@@ -39,12 +39,12 @@ const actions = {
       logout()
         .then(() => {
           commit("SET_TOKEN", undefined);
-          commit("SET_USER", undefined);
+          commit("SET_USER", {});
           resolve();
         })
         .catch(() => {
           commit("SET_TOKEN", undefined);
-          commit("SET_USER", undefined);
+          commit("SET_USER", {});
           reject();
         });
       remove();
