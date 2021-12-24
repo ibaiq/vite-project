@@ -30,7 +30,6 @@ const actions = {
     return new Promise((resolve, reject) => {
       getRoutes()
         .then((res) => {
-          console.log(res);
           const routes = JSON.parse(JSON.stringify(res.data));
           const sidebarRoutes = filterAsyncRouter(routes);
           const backRoute = JSON.parse(JSON.stringify(res.data));
@@ -63,7 +62,7 @@ const actions = {
   },
 };
 
-const filterAsyncRouter = (asyncRouterMap, lastRoute = false, type = false) => {
+const filterAsyncRouter = (asyncRouterMap, type = false) => {
   return asyncRouterMap.filter((route) => {
     if (type && route.children) {
       route.children = filterChildren(route.children);
@@ -114,10 +113,10 @@ const filterChildren = (childrenMap, lastRoute = false) => {
   return children;
 };
 
-const modules = import.meta.glob("../../views/**/**.vue");
+const modules = import.meta.glob("/src/views/**/**.vue");
 
 export const loadView = (view) => {
-  let path = "../../views/";
+  let path = "/src/views/";
   if (new RegExp("^/views/.*$").test(view)) {
     path += view.replace(/^\/views\//, "");
   } else if (new RegExp("^views/.*$").test(view)) {

@@ -1,13 +1,5 @@
-<template>
+<template></template>
 
-</template>
+<script setup></script>
 
-<script>
-export default {
-  name: "Index"
-}
-</script>
-
-<style scoped>
-
-</style>
+<style scoped></style>

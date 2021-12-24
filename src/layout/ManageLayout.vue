@@ -2,10 +2,6 @@
   <router-view />
 </template>
 
-<script>
-export default {
-  name: "ManageLayout",
-};
-</script>
+<script setup></script>
 
 <style scoped></style>

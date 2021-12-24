@@ -3,7 +3,7 @@ import manage from "@/router/manage.js";
 import store from "@/store/index.js";
 import Nprogress from "nprogress";
 
-Nprogress.configure({ showSpinner: true });
+Nprogress.configure({ showSpinner: false });
 
 const routes = [
   {
@@ -42,7 +42,7 @@ router.beforeEach((to, from, next) => {
 
   if (authList.indexOf("/".concat(to.fullPath.split("/")[1])) !== -1) {
     if (store.getters.token) {
-      if (!store.getters.user.username) {
+      if (!store.getters.user) {
         store.dispatch("user/Profile").catch(() => {
           next(to.fullPath);
         });
@@ -89,7 +89,7 @@ router.beforeEach((to, from, next) => {
   }
 });
 
-router.afterEach(() => {
+router.afterEach((to) => {
   Nprogress.done();
 });
 

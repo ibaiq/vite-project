@@ -49,7 +49,7 @@ const data = reactive({
 
 if (store.getters.token) {
   data.isLogin = true;
-  if (!store.getters.user.username) {
+  if (!store.getters.user) {
     store
       .dispatch("user/Profile")
       .then((res) => {
