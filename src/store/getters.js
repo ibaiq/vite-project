@@ -3,9 +3,9 @@ const getters = {
   user: (state) => state.user.user,
   menus: (state) => state.menu.menus,
   routes: (state) => state.menu.routes,
-  // isCollapse: (state) => state.app.isCollapse,
-  // isMobile: (state) => state.app.isMobile,
-  // topNav: (state) => state.app.topNav,
+  sidebar: (state) => state.app.sidebar,
+  device: (state) => state.app.device,
+  topNav: (state) => state.menu.topNavRoutes,
 };
 
 export default getters;

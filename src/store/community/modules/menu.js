@@ -4,8 +4,7 @@ import InnerLink from "@/components/innerLink/Index.vue";
 import { getRoutes } from "@/api/menu.js";
 import manage from "@/router/manage.js";
 import router from "@/router/index.js";
-
-// const path = require("path");
+import { getNormalPath } from "@/utils/ibaiq.js";
 
 const state = {
   menus: [],
@@ -40,7 +39,6 @@ const actions = {
           });
           backupRoutes.forEach((route) => {
             manage[0].children.push(route);
-            // route.path = path.resolve(manage[0].path, route.path);
           });
           sidebarRoutes.forEach((sidebar) => {
             sidebar.path.replace("/", "");

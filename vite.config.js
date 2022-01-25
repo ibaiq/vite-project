@@ -25,7 +25,7 @@ export default ({ mode }) =>
     },
     server: {
       host: "0.0.0.0",
-      port: "80",
+      port: 80,
       open: false,
       proxy: {
         [loadEnv(mode, process.cwd()).VITE_APP_BASE_API + "/alibaba"]: {
@@ -38,7 +38,7 @@ export default ({ mode }) =>
             ),
         },
         [loadEnv(mode, process.cwd()).VITE_APP_BASE_API]: {
-          target: `https://api.ibaiq.com`,
+          target: loadEnv(mode, process.cwd()).VITE_APP_BASE_URL,
           changeOrigin: true,
           rewrite: (path) =>
             path.replace(loadEnv(mode, process.cwd()).VITE_APP_BASE_API, ""),
