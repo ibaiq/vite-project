@@ -1,5 +1,5 @@
 <template>
-  <template v-if="!item.hidden">
+  <div v-if="!item.hidden">
     <template
       v-if="
         hasOneShowingChild(item.children, item) &&
@@ -56,7 +56,7 @@
         class="nest-menu"
       />
     </el-sub-menu>
-  </template>
+  </div>
 </template>
 
 <script setup>
