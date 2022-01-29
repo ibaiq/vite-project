@@ -21,6 +21,27 @@
         {{ item.meta.title }}
       </el-menu-item>
     </template>
+    <!-- 顶部菜单超出数量折叠 -->
+    <el-sub-menu index="more" v-if="topMenus.length > data.visibleNumber">
+      <template #title>更多菜单</template>
+      <template v-for="(item, index) in topMenus">
+        <el-menu-item
+          :index="item.path"
+          :key="index"
+          v-if="index >= data.visibleNumber"
+        >
+          <svg
+            v-if="item.meta.icon.includes('#')"
+            class="svg-icon"
+            aria-hidden="true"
+          >
+            <use :href="item.meta.icon"></use>
+          </svg>
+          <i v-else :class="'iconfont ' + item.meta.icon" />
+          {{ item.meta.title }}
+        </el-menu-item>
+      </template>
+    </el-sub-menu>
   </el-menu>
 </template>
 

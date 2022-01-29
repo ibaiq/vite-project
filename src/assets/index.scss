@@ -21,13 +21,43 @@
 }
 
 #app {
+  .app-wrapper {
+    .header-fixed {
+      .header {
+        position: fixed;
+        z-index: 100;
+        top: 0;
+      }
+
+      .app-main {
+        margin-top: 50px;
+      }
+    }
+  }
+
   .main-container {
     .app-main {
+      .is-last {
+        margin-bottom: 0 !important;
+      }
+
       .card {
         padding: 15px 15px 0;
         background: white;
         border-radius: 5px;
         box-shadow: 0 3px 15px -5px rgba(0, 0, 0, 0.15);
+
+        &:not(:last-child) {
+          margin-bottom: 15px;
+        }
+
+        .el-pagination {
+          .el-pagination__sizes {
+            .el-input__suffix {
+              right: 12px;
+            }
+          }
+        }
 
         .el-form .el-form-item {
           .el-form-item__label {
@@ -40,9 +70,16 @@
         }
 
         .el-table {
+          .el-table-column {
+          }
+
           .cell {
             line-height: normal !important;
             height: calc(100% - 3px);
+
+            .el-button--text {
+              //font-weight: 400;
+            }
           }
 
           .svg-icon {
@@ -67,7 +104,7 @@
 }
 
 .popups {
-  border-radius: 10px;
+  border-radius: 10px !important;
 
   > .el-dialog__body {
     > .el-form .el-form-item {
@@ -75,5 +112,13 @@
         font-weight: bold;
       }
     }
+  }
+}
+
+.dialog-mobile {
+  .el-dialog__footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
   }
 }

@@ -4,7 +4,6 @@ import InnerLink from "@/components/innerLink/Index.vue";
 import { getRoutes } from "@/api/menu.js";
 import manage from "@/router/manage.js";
 import router from "@/router/index.js";
-import { getNormalPath } from "@/utils/ibaiq.js";
 
 const state = {
   menus: [],

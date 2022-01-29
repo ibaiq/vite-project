@@ -6,6 +6,7 @@ const state = {
       ? true
       : Boolean(eval(Cookie.get("sidebarStatus"))),
   device: "desktop",
+  sentence: "",
 };
 
 const mutations = {
@@ -21,6 +22,9 @@ const mutations = {
   },
   TOGGLE_DEVICE: (state, device) => {
     state.device = device;
+  },
+  SET_SENTENCE: (state, sentence) => {
+    state.sentence = sentence;
   },
 };
 

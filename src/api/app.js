@@ -12,3 +12,12 @@ export async function access(data) {
     },
   });
 }
+
+/**
+ * 每日一句
+ */
+export async function sentence() {
+  return request("/sentence", {
+    method: "GET",
+  });
+}

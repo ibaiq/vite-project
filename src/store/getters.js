@@ -6,6 +6,7 @@ const getters = {
   sidebar: (state) => state.app.sidebar,
   device: (state) => state.app.device,
   topNav: (state) => state.menu.topNavRoutes,
+  sentence: (state) => state.app.sentence,
 };
 
 export default getters;

@@ -12,6 +12,7 @@
         <el-form :model="data.user" :rules="rules" ref="form">
           <el-form-item prop="username">
             <el-input
+              autofocus
               :prefix-icon="User"
               placeholder="请输入用户名"
               v-model="data.user.username"

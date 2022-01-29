@@ -3,7 +3,7 @@ import manage from "@/router/manage.js";
 import store from "@/store/index.js";
 import Nprogress from "nprogress";
 import { Base64 } from "js-base64";
-import { access } from "@/api/app.js";
+import { access, sentence } from "@/api/app.js";
 
 Nprogress.configure({ showSpinner: false });
 
@@ -59,6 +59,9 @@ router.beforeEach((to, from, next) => {
               hidden: true,
               component: () => import("@/views/error/NotFound"),
               meta: { title: "页面不存在" },
+            });
+            sentence().then((res) => {
+              store.commit("app/SET_SENTENCE", res.data);
             });
             next({ ...to, replace: true });
           })
